@@ -1,7 +1,9 @@
 package co.develhope.logging.controllers;
 
+import co.develhope.logging.services.ExpService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class ExpController {
-    @Value("${environment1}")
-    private int environment1;
-    @Value("${environment2}")
-    private int environment2;
+
+    @Autowired
+    ExpService expService;
 
     Logger logger = LoggerFactory.getLogger(ExpController.class);
 
@@ -26,7 +27,7 @@ public class ExpController {
     @GetMapping("/exp")
     public int result() {
         logger.info("Start");
-        int powResult = (int) Math.pow(environment1, environment2);
+        int powResult = expService.result();
         logger.info("Finish");
         return powResult;
     }
