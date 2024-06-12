@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "0f47c4c3-10d3-4927-baab-8ef3c940ede5",
+		"name": "logging",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34619538"
+	},
+	"item": [
+		{
+			"name": "myCustomLogs",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{LOCAL}}/exp"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{LOCAL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
